@@ -1,0 +1,20 @@
+content 1
+Acitvity 1.1
+
+In this activity we are going to learn how to generate an image out of this story using the tabular prompt that we have already learned. First i want you to read and understand the story then try to relate with the above image. Now will take out the important keywords and make the tabular prompt. Click the highlighted keywords from this story to copy and click the table that matches highlightedcolor. In order to get the prompt we need to fill all the keywords into the table. Once you finish filling the table then click sumbit button to evaluate it. Please make sure you filled the table with the correct keywords. If the keywords are correct then the copy prompt button will appear, click the button to copy the prompt. On the right there'll be a gif will guide you with picture on the next steps. Open a new tab in chrome and go gemini then paste the prompt in the chat them click enter. It will start generating an image. Then come back to the book.
+content 2
+This is the first task in activity 1, We'vw break down the story, and explain them scene by scene. Compare the statment and the picture, if both are matches then click yes, otherwise click no. After answered all the questions then click submit to evalute it and correct if you have answered incorrectly. 
+content 3
+Now, click the right arrow to see the next page, Task 2 here we're building the vocabulary. You have to match the words with the right object on the picture. Make sure you match the correct object to the word with correct number of order then click submit to evaluate the answers.
+content 4
+Then go to next page, task is same as the activity 1.1. But the story has some variations, by adding more details we can get a pricise image that conveys the exact story. As we did earlier make tabluar with right keywords and validate it by clicking submit. Then the copy prompt button will appear to copy the prompt. Then paste it into gemini to generate the image. Once we generate the image come back to the book and go to nextv page.
+content 5
+Task 4 is same story but with little variations for you practice and get comfortable with making tabular prompt and generating the images.
+content 6
+Again Task is variation of the story, the task 6 is activity where we need find the context from the picture. Click the drop down beside each of the picture and choose exact context. Then click to submit to validate. If all the answers are correct we can move to the next page.
+content 7
+Activty 1.2 and acticity 1.3 both are different story with different context, these are all practices for you to stregnthen story building and generating images.
+content 8
+Here final project, this is the actual project we are going to evaluate. Renewable energy is given concept here, it could be anything, Generate your own image using tabular prompt that conveys your own story. You can give multiple prompts and more details to get the perfect image. once you finished move your cursor to top right then click the share button to copy the chat and come back to the book then paste the link here and click submit.
+content 9
+Then move to the next page, so far we have completed the acticity 1 and we have activity 2 and 3 which is similar as activity but the each will different story and differents concepts. Then finally we will have final project, AGH event is the concept, how this event helped you learn AI and comprehension. Once you finish generating the image copy paste the share link. Successfully you have completed the AGH hackathon!

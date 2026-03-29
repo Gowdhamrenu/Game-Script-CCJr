@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Game Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Change data-active-world to switch worlds -->
+<div id="game" data-active-world="world-dodger">
+
+<!-- ════════════════════════════════════════════════════════════
+     WORLD 1: INFINITE RUNNER  ✅ Active
+     Scope: Survive as long as possible. Score = time survived.
+     Player: Jump over obstacles.
+     Win:    No win condition — survive forever.
+     Death:  Touch any obstacle.
+     ════════════════════════════════════════════════════════════ -->
+
+<div id="world-runner" class="game-world">
+
+    <!-- Background — loops infinitely via scroll block -->
+    <div class="entity bg scroll speed"
+         data-x="0" data-y="0"
+         data-persistent="true">
+    </div>
+
+    <!-- Player — gravity pulls it down, jump lets it jump.
+         Swap "jump" → "doubleJump" to allow a second mid-air jump.
+         Add "health" to give 3 lives instead of instant death.      -->
+    <div class="entity player gravity doubleJump health "
+         data-x="60" data-y="0"
+         data-persistent="true">
+    </div>
+
+    <!-- Spawner — creates obstacles at a random rate.
+         Change spawn.rate and spawn.template in blocks.js.          -->
+    <div class="entity spawner spawn"
+         data-x="0" data-y="0"
+         data-persistent="true">
+    </div>
+
+    <!-- HUD -->
+    <div class="score">Score: 0</div>
+    <div class="hp"></div>
+    <div class="pause-label" style="display:none;">PAUSED</div>
+    <div class="game-message" style="display:none;"></div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     WORLD 2: PLATFORMER  ✅ Active
+     Scope: Reach the goal flag. Score = time survived.
+     Player: Move left/right with Arrow Keys, jump with Space.
+     Win:    Touch the goal flag.
+     Death:  Fall off the screen.
+
+     HOW TO ACTIVATE:
+     1. Change ACTIVE_WORLD = "world-platformer" in main.js
+     ════════════════════════════════════════════════════════════ -->
+
+<div id="world-platformer" class="game-world">
+
+    <!-- Platformer: move left/right + jump across platforms -->
+    <div class="entity player gravityLoose jump health fallKill shipMove"
+         data-x="60" data-y="20"
+         data-persistent="true">
+    </div>
+
+    <div class="entity platform"
+         data-x="0" data-y="0"
+         data-persistent="true"
+         style="width:260px; height:20px; background:#654; border-radius:3px;">
+    </div>
+
+    <div class="entity platform"
+         data-x="240" data-y="70"
+         data-persistent="true"
+         style="width:190px; height:20px; background:#654; border-radius:3px;">
+    </div>
+
+    <div class="entity platform"
+         data-x="450" data-y="140"
+         data-persistent="true"
+         style="width:160px; height:20px; background:#654; border-radius:3px;">
+    </div>
+
+    <div class="entity goal"
+         data-x="690" data-y="160"
+         data-persistent="true"
+         style="width:30px; height:50px; border-radius:4px;">
+    </div>
+
+    <!-- HUD -->
+    <div class="score">Score: 0</div>
+    <div class="hp"></div>
+    <div class="pause-label" style="display:none;">PAUSED</div>
+    <div class="game-message" style="display:none;"></div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     WORLD 3: TOP-DOWN DODGER  ✅ Active
+     Scope: Survive the rain of falling objects.
+     Player: Move with Arrow Keys.
+     Win:    Survive for ~10 seconds.
+     Death:  Hit by a falling object.
+
+     HOW TO ACTIVATE:
+     1. Change ACTIVE_WORLD = "world-dodger" in main.js
+     ════════════════════════════════════════════════════════════ -->
+
+<div id="world-dodger" class="game-world">
+
+    <!-- Top-down dodger: move left/right, survive the rain -->
+    <div class="entity player topdownMove health jump"
+         data-x="60" data-y="30"
+         data-persistent="true">
+    </div>
+
+    <!-- Spawns falling obstacles -->
+    <div class="entity spawner spawnRain"
+         data-x="0" data-y="0"
+         data-persistent="true">
+    </div>
+
+    <!-- HUD -->
+    <div class="score">Score: 0</div>
+    <div class="hp"></div>
+    <div class="pause-label" style="display:none;">PAUSED</div>
+    <div class="game-message" style="display:none;"></div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     WORLD 4: SPACE SHOOTER  ✅ Active
+     Scope: Survive waves of enemies. Shoot to earn points.
+     Player: Move with Arrow Keys, shoot with X.
+     Win:    Clear all waves.
+     Death:  Hit by enemy.
+
+     HOW TO ACTIVATE:
+     1. Change ACTIVE_WORLD = "world-shooter" in main.js
+     ════════════════════════════════════════════════════════════ -->
+
+<div id="world-shooter" class="game-world">
+
+    <!-- Space shooter: move left/right, hold X to shoot -->
+    <div class="entity player shipMove shooter health"
+         data-x="380" data-y="20"
+         data-persistent="true">
+    </div>
+
+    <!-- Spawns waves of enemies -->
+    <div class="entity spawner spawnWave"
+         data-x="0" data-y="0"
+         data-persistent="true">
+    </div>
+
+    <!-- HUD -->
+    <div class="score">Score: 0</div>
+    <div class="hp"></div>
+    <div class="pause-label" style="display:none;">PAUSED</div>
+    <div class="game-message" style="display:none;"></div>
+
+</div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     WORLD N: ADD YOUR NEXT WORLD HERE
+     Copy the pattern above. Define the scope clearly in comments.
+     ════════════════════════════════════════════════════════════ -->
+
+
+<script type="module" src="blocks.js"></script>
+<script type="module" src="engine.js"></script>
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
